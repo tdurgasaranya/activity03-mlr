@@ -141,7 +141,7 @@ In Activity 2 you explored simple linear regression models.
 Specifically, you fit and assessed:
 
 $$
-\texttt{pf\_score} = \beta_0 + \beta_1 \times \texttt{pf\_expression\_control} + \varepsilon
+\texttt{pf\\_score} = \beta_0 + \beta_1 \times \texttt{pf\\_expression\\_control} + \varepsilon
 $$
 
 ![check-in](../README-img/noun-magnifying-glass.png) **Check in**
@@ -200,7 +200,7 @@ continue ahead.
 You will not fit the following model:
 
 $$
-\texttt{pf\_score} = \beta_0 + \beta_1 \times \texttt{hf\_score} + \beta_2 \times \texttt{ef\_score} + \varepsilon
+\texttt{pf\\_score} = \beta_0 + \beta_1 \times \texttt{hf\\_score} + \beta_2 \times \texttt{ef\\_score} + \varepsilon
 $$
 
 - Create a new R code chunk and type the following, then run your code
@@ -217,8 +217,10 @@ After doing this, answer the following questions:
     model. Remember in Activity 2 that this looked like:
 
 $$
-\hat{y} = 4.28 + 0.542 \times \texttt{pf\_expression\_control}
-$$ Your model here will be slightly different.
+\hat{y} = 4.28 + 0.542 \times \texttt{pf\\_expression\\_control}
+$$
+
+Your model here will be slightly different.
 
 7.  For each of the estimated parameters (the *y*-intercept, and slope
     associated with each explanatory variable - three total), interpret
