@@ -7,9 +7,12 @@ course site you were provided with items to read, watch, and do prior to
 attempting this activity. Do not proceed in this activity until you have
 minimally:
 
-1.  (Day 1 portion) Read *ISL* [Sections 3.2.0 (the chapter
-    introduction) & 3.2.1](https://rdcu.be/c3STG).
-2.  (Day 2 portion) Read *ISL* [Sections 3.2.2](https://rdcu.be/c3STG).
+1.  (Day 1 portion) Read *ISL* [Section
+    3.2](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf).
+2.  (Day 2 portion) Read *ISL* [Sections 3.3.1 &
+    3.3.2](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf).
+3.  (Day 3 portion) Read *ISL* [Section
+    3.3.3](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf).
 
 In this repository/directory, you should see five items:
 
@@ -19,10 +22,12 @@ In this repository/directory, you should see five items:
 - `.gitignore` - a file that is used to specify what Git can ignore when
   pushing to GitHub. You do not need to do anything with this.
 - `README.md` - the document you are currently reading.
-- `day01-fitting` - a folder that contains items for you to complete
-  during the first 75-minute class meeting.
-- `day02-assessing` - a folder that contains items for you to complete
-  during the second 75-minute class meeting.
+- `day01-quantitative-explanatory` - a folder that contains items for
+  you to complete during the first class meeting.
+- `day02-qualitative-explanatory` - a folder that contains items for you
+  to complete during the second class meeting.
+- `day03-other-considerations` - a folder that contains items for you to
+  complete during the third class meeting.
 
 We will explore most of these items over this week. Before doing that,
 you will first make your own copy of this repository.
@@ -37,7 +42,7 @@ College), in collaboration with the OpenIntro team and others. The
 following tutorials will provide you with an applied approach to our
 topics (reorganized to better correspond with our readings):
 
-Days 1 & 2:
+Days 1, 2, & 3:
 
 - *ISL* 3.2 & 3.3 - [Multiple
   regression](https://openintro.shinyapps.io/ims-03-model-08/)
@@ -126,23 +131,19 @@ forking process.
 
 ## Task 2: One quantitative response variable and two quantitative explanatory variable
 
-We will continue exploring the Human Freedom Index dataset. Recall that
-this is a report that attempts to summarize the idea of “freedom”
-through a bunch of different variables for many countries around the
-globe. It serves as a rough objective measure for the relationships
-between the different types of freedom - whether it is political,
-religious, economical or personal freedom - and other social and
-economic circumstances. The Human Freedom Index is an annually
-co-published report by the Cato Institute, the Fraser Institute, and the
-Liberales Institut at the Friedrich Naumann Foundation for Freedom.
+You will continue using your data from Activity 2 or find a new dataset
+that contains one quantitative response variable, at least two
+quantitative explanatory variables (for Days 1, 2, & 3), and at least
+one qualitative explanatory variable (for Days 2 & 3).
 
 Read these directions first, then work through them.
 
 1.  In your `activity03-mlr` repo folder/directory, locate and click
-    into the `day01-fitting` subfolder.
-2.  In the `day01-fitting` subfolder, you will be greeted by a new
-    `README.md` file. Do your best to complete the tasks/directions
-    provide in this subfolder by **11:59 pm (EST) on Tue, Jan 31**.
+    into the `day01-quantitative-explanatory` subfolder.
+2.  In the `day01-quantitative-explanatory` subfolder, you will be
+    greeted by a new `README.md` file. Do your best to complete the
+    tasks/directions provide in this subfolder by **11:59 pm (EST) on
+    Tue, Jan 31**.
 3.  Ask questions in class as you are working. If you need to finish
     this up outside of our class meetings, remember that you can use our
     Teams workspace (linked on Blackboard), and post questions/issues in
@@ -155,72 +156,57 @@ Read these directions first, then work through them.
 The rest of this `README` document contains tasks/directions for the
 second class meeting of this week.
 
+<!--
 ## Task 3: Updating your forked GitHub repo
 
-You will need to start reading these directions back at my
-`gvsu-sta631/activity03-mlr` GitHub repo **and** have your forked
-`username/activity03-mlr` GitHub repo handy. I recommend that you have
-my repo opened on one half of your screen and your repo opened on the
-other half. Read these directions first, then work through them.
+You will need to start reading these directions back at my `gvsu-sta631/activity03-mlr` GitHub repo **and** have your forked `username/activity03-mlr` GitHub repo handy.
+I recommend that you have my repo opened on one half of your screen and your repo opened on the other half.
+Read these directions first, then work through them.
 
-1.  At the top of your `username/activity03-mlr` repo (above the repo
-    contents section), verify that you see a message that looks
-    something like:
-
-> This branch is X commits behind gvsu-sta631:main.
-
-2.  Click on the hyperlinked “X commits behind” portion of that message
-    to be taken to a **Comparing changes** page.
-3.  Verify that your drop-down menu options specify:
+1. At the top of your `username/activity03-mlr` repo (above the repo contents section), verify that you see a message that looks something like:
+  
+  > This branch is X commits behind gvsu-sta631:main.
+  
+2. Click on the hyperlinked "X commits behind" portion of that message to be taken to a **Comparing changes** page.
+3. Verify that your drop-down menu options specify:
     - base repository: username/activity03-mlr
     - base: main
     - head repository: gvsu-sta631/activity03-mlr
     - compare: main
-4.  Also verify that you have a message directly below this that says:
+4. Also verify that you have a message directly below this that says:
 
-> ✓ Able to merge. These branches can be automatically merged.
+  > &check; Able to merge. These branches can be automatically merged.
+  
+  Flag me if you see something different.
 
-Flag me if you see something different.
-
-5.  Click on the green **Create pull request** button under this
-    previous message. Note you can look at the changes that I made, if
-    you so desire, by scrolling down. However, this is not necessary.
-6.  On the next page, provide a short descriptive message in the “Title”
-    box (e.g., “Adding Day 2 materials”). You can also provide a more
-    detailed message in the “Leave a comment” box if you choose.
-7.  Click on the green **Create pull request** button.
-8.  On the next screen which is titled the same thing as what you
-    provided in the “Title” box on the previous screen, you will be
-    presented with a bunch of information. If you scroll down a little,
-    you should see a green check mark with a message that specifies:
-
-> This branch has no conflicts with the base branch
-
-And you can click on the green **Merge pull request**.
-
-9.  You will be provided with with an opportunity to provide another
-    meaningful message (or accept the default message). Finally, click
-    on the green **Confirm merge** button. You can now work directly
-    from your `username/activity03-mlr` repo.
-
+5. Click on the green **Create pull request** button under this previous message.
+  Note you can look at the changes that I made, if you so desire, by scrolling down.
+  However, this is not necessary.
+6. On the next page, provide a short descriptive message in the "Title" box (e.g., "Adding Day 2 materials").
+  You can also provide a more detailed message in the "Leave a comment" box if you choose.
+7. Click on the green **Create pull request** button.
+8. On the next screen which is titled the same thing as what you provided in the "Title" box on the previous screen, you will be presented with a bunch of information.
+  If you scroll down a little, you should see a green check mark with a message that specifies:
+  
+  > This branch has no conflicts with the base branch
+  
+  And you can click on the green **Merge pull request**.
+  
+9. You will be provided with with an opportunity to provide another meaningful message (or accept the default message).
+  Finally, click on the green **Confirm merge** button.
+  You can now work directly from your `username/activity03-mlr` repo.
+  
 In summary, what you just did is pulled my changes into your repository.
-Git and GitHub refer to this as a “pull request” because you are asking
-to pull items into your repo.
+Git and GitHub refer to this as a "pull request" because you are asking to pull items into your repo.
 
 ## Task 4: Assessing a multiple linear regression model
 
-In your `username/activity03-mlr` repo, go into the `day02-assessing`
-subfolder and follow the tasks listed in the `README`. You will continue
-to work in your `activity03-day01.Rmd` file that you started during Day
-1 of this activity.
+In your `username/activity03-mlr` repo, go into the `day02-assessing` subfolder and follow the tasks listed in the `README`.
+You will continue to work in your `activity03-day01.Rmd` file that you started during Day 1 of this activity.
 
 ## Attribution
 
-This document is based on labs from
-[OpenIntro](https://www.openintro.org/).
+This document is based on labs from [OpenIntro](https://www.openintro.org/).
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
-style="border-width:0" alt="Creative Commons License" /></a><br />This
-work is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png){style="border-width:0"}</a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+-->

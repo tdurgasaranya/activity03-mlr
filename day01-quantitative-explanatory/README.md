@@ -20,9 +20,9 @@ Read these directions first, then work through them.
 
 ![check-in](../README-img/noun-magnifying-glass.png) **Check in**
 
-Review your `activity02-day01.Rmd` file (the one from last week) and
-take note of: - What you like about its organization. - What do you want
-to do differently this time?
+Review your `activity02.Rmd` file (the one from last week) and take note
+of: - What you like about its organization. - What do you want to do
+differently this time?
 
 Consider my `README` documents and how they are organized. I do not
 think these are the “best” way, but they do follow typical standards
@@ -36,7 +36,7 @@ thinking/doing?
 
 ## Task 2: Load the necessary packages
 
-We will be using two packages from Posit (formerly
+I encourage you to continue using the two packages from Posit (formerly
 [RStudio](https://posit.co/)): `{tidyverse}` and `{tidymodels}`.
 Remember that [Emil Hvitfeldt](https://www.emilhvitfeldt.com/) (of
 Posit) has put together a [complementary online
@@ -81,8 +81,8 @@ is very handy for pairwise comparisons of multiple variables.
   installed. Be sure to check both your **User Library** and **System
   Library**.
 
-- If either of these are not currently listed, type the following in
-  your **Console** pane and press Enter/Return afterwards.
+- If this is not currently listed, type the following in your
+  **Console** pane and press Enter/Return afterwards.
 
   ``` r
   install.packages("GGally")
@@ -104,36 +104,28 @@ Remember to organize your RMarkdown document using your Markdown skills.
 
 ## Task 3: Load the data and
 
-The data we’re working with is from the OpenIntro site:
-`https://www.openintro.org/data/csv/hfi.csv`
+- Create a new R code chunk to read in your datafile. If you uploaded
+  this data to your Activity 2 repo, can you read it in from that GitHub
+  repo instead of re-uploading to this new repo?
+- Assign this data set into a data frame with an appropriate name.
 
-- Create a new R code chunk to read in the linked CSV file.
-- Rather than downloading this file, uploading to RStudio, then reading
-  it in, explore how to load this file directly from the provided URL
-  with `readr::read_csv` (`{readr}` is part of `{tidyverse}` so you do
-  not need to load/`library` it separately).
-- Assign this data set into a data frame named `hfi` (short for “Human
-  Freedom Index”).
-
-Review the [Human Freedom
-Index](https://www.openintro.org/data/index.php?data=hfi) description
-page. If you still have questions, review the **Source** at the bottom
-of the description page. After doing this, answer the following
-questions:
+Review the source of your data set (e.g., a description page or data
+dictionary). After doing this, answer the following questions:
 
 1.  Is this an observational study or an experiment?
 
 You will need to create appropriate *univariate* graphs to help in
 answering this:
 
-2.  Describe the distribution of `pf_score` Is the distribution skewed?
-    Are there any other interesting/odd features (outliers, multiple
-    peaks, etc.)? What does that tell you about countries’ personal
-    freedoms? Is this what you expected to see? Why, or why not?
+2.  Describe the distribution of your response variable. Is the
+    distribution skewed? Are there any other interesting/odd features
+    (outliers, multiple peaks, etc.)? What does that tell you about
+    countries’ personal freedoms? Is this what you expected to see? Why,
+    or why not?
 
-3.  Excluding `pf_score`, select two other numeric variables (hint: look
-    for `<dbl>` or `<int>` designations) and describe their relationship
-    with each other using an appropriate visualization.
+3.  Excluding your response variable, select two other numeric variables
+    (hint: look for `<dbl>` or `<int>` designations) and describe their
+    relationship with each other using an appropriate visualization.
 
 ## Task 4: Pairwise relationships
 
@@ -141,7 +133,7 @@ In Activity 2 you explored simple linear regression models.
 Specifically, you fit and assessed:
 
 $$
-\texttt{pf\\_score} = \beta_0 + \beta_1 \times \texttt{pf\\_expression\\_control} + \varepsilon
+y = \beta_0 + \beta_1 \times x + \varepsilon
 $$
 
 ![check-in](../README-img/noun-magnifying-glass.png) **Check in**
@@ -151,32 +143,35 @@ parameter estimates (i.e., the $\beta$s)? How did you interpret these
 and what did they imply for this scenario? - How good of a fit was this
 model? What did you use to assess this?
 
-For this activity, we will begin using the two other *scores* variables
-(i.e., `hf_score` and `ef_score`) to describe the patterns in
-`pf_score`. Take a moment to think about what this previous sentence
-means:
+For this activity, we will begin using the two other quantitative
+variables to describe the patterns in the response variable. Take a
+moment to think about what this previous sentence means:
 
 - What does this mean from a statistical point of view?
-- What does this mean from a “real world” point of view?
+- What does this mean from a “real world” point of view (i.e., for your
+  data’s situation)?
 
 Now, we will obtain graphical and numerical summaries to describe the
 pairwise relationships.
 
-- Create a new R code chunk and type the following, then run your code
-  chunk or knit your document.
+- Create a new R code chunk and type the following, replacing `response`
+  and `explanatory` as appropriate, then run your code chunk or knit
+  your document.
 
   ``` r
-  hfi %>% 
-    select(ends_with("_score")) %>% 
+  data %>% 
+    select(response, explanatory, explanatory) %>% 
     ggpairs()
   ```
 
-Note that a warning message (really a list of warning messages) will
+Note that a warning message (really a list of warning messages) might
 display in your **Console** and likely under your R code chunk when you
-knit this report. To suppress warning messages from displaying after
-this specific R code chunk, add the follow inside the curly brackets
-(`{r }`) at the top of your R code chunk (notice the preceding comma):
-`, warning=FALSE`.
+knit this report. In R, warning messages are not necessarily a bad thing
+and you should read these to make sure you understand what it is
+informing you of. To suppress warning messages from displaying after
+this specific R code chunk when you knit your report, add the follow
+inside the curly brackets (`{r }`) at the top of your R code chunk
+(notice the preceding comma): `, warning=FALSE`.
 
 After doing this, answer the following questions:
 
@@ -187,28 +182,35 @@ After doing this, answer the following questions:
 5.  For each pair of variables, how would you describe the relationship
     numerically?
 
-Aside, if we use both `hf_score` and `ef_score` to describe the patterns
-in `pf_score`, hopefully you noticed that `hf_score` and `ef_score` are
-collinear (correlated). Essentially, this means that adding more than
-one of these variables to the model would not add much value to the
-model. We will talk more on this issue in Activity 4 (other
-considerations in regression models). For the time being, we will simply
-continue ahead.
+6.  Are your two explanatory variables collinear (correlated)?
+    Essentially, this means that adding more than one of these variables
+    to the model would not add much value to the model. We will talk
+    more on this issue in Activity 4 (other considerations in regression
+    models).
 
 ## Task 5: The multiple linear regression model
 
 You will now fit the following model:
 
 $$
-\texttt{pf\\_score} = \beta_0 + \beta_1 \times \texttt{hf\\_score} + \beta_2 \times \texttt{ef\\_score} + \varepsilon
+y = \beta_0 + \beta_1 \times x_1 + \beta_2 \times x_2 + \varepsilon
 $$
 
-- Create a new R code chunk and type the following, then run your code
-  chunk or knit your document.
+- Create a new R code chunk and type the following, replacing `response`
+  and `explanatory` as appropriate, then run your code chunk or knit
+  your document.
 
   ``` r
-  m_hr_ef <- lm(pf_score ~ hf_score + ef_score, data = hfi)
-  tidy(m_hr_ef)
+  lm_spec <- linear_reg() %>%
+  set_mode("regression") %>%
+  set_engine("lm")
+
+  lm_spec
+
+  mlr_mod <- lm_spec %>% 
+  fit(response ~ explanatory + explanatory, data = hfi_2016)
+
+  tidy(mlr_mod)
   ```
 
 After doing this, answer the following questions:
@@ -217,15 +219,16 @@ After doing this, answer the following questions:
     model. Remember in Activity 2 that this looked like:
 
 $$
-\hat{y} = 4.28 + 0.542 \times \texttt{pf\\_expression\\_control}
+\hat{y} = b_0 + b_1 \times x_1
 $$
 
-Your model here will be slightly different.
+where $b_0$ and $b_1$ were your model parameter estimates. Note that
+your model here will be slightly different.
 
-7.  For each of the estimated parameters (the *y*-intercept, and slope
-    associated with each explanatory variable - three total), interpret
-    these values in the context of this problem. That is, what do they
-    mean for a “non-data” person?
+7.  For each of the estimated parameters (the *y*-intercept and the
+    slopes associated with each explanatory variable - three total),
+    interpret these values in the context of this problem. That is, what
+    do they mean for a “non-data” person?
 
 ## Challenge: 3-D plots
 
