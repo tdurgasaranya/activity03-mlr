@@ -13,7 +13,7 @@ qualitative explanatory variable with two levels - for ease of
 interpretability. However, before we continue let’s take some time to
 pause and reflect.
 
-![check-in](README-img/noun-magnifying-glass.png) **Check in**
+![check-in](../README-img/noun-magnifying-glass.png) **Check in**
 
 Either from memory or looking back at what I asked you to do in Activity
 1 - Day 3 and throughout Activities 2 & 3, what has been our analysis
