@@ -1,5 +1,5 @@
 ---
-title: Durga Tummalapalli
+## Durga Tummalapalli
 title: "Activity 3 - MLR"
 output: github_document
 ---
@@ -113,24 +113,52 @@ df %>%
   select(age, charges) %>%
   ggpairs()
 ```
+- here the two variables are not strongly linear to determine any prediction modelling
 
-- 6. The two explanatory variables are not linear and no overlapping.
-
-```{r}
-
-```
-
+### Multi Regression model
 
 
 ```{r}
+lm_spec <- linear_reg() %>%
+set_mode("regression") %>%
+set_engine("lm")
 
+lm_spec
+
+mlr_mod <- lm_spec %>% 
+fit(charges ~ bmi + bmi, data = df)
+
+tidy(mlr_mod)
 ```
 
-
+## Fit the multiple linear regression model
 
 ```{r}
 
+
+model <- lm(bmi ~ age + bmi + charges, data = df)
+
+# coefficients
+coefficients <- coef(model)
+
+cat("y =", coefficients[1], "+", coefficients[2], "* x1 +", coefficients[3], "* x2 +", coefficients[4], "* x3")
+
+
 ```
+### 3D PLOTS:
+- 3D plots can be created using scatter3D functions and this is not very interactive visual in Github rather it appears as a steady graph
+- Although it provides a clear depiction of clustering of datasets groups it is not good with Git as the limitations to represent all the dimension visualization
+-  GGally::ggpairs  displays the output as images on Git and is very understandable from Git
+
+```{r}
+
+library(plot3D)
+
+data <- df
+
+# Create a 3D scatter plot
+scatter3D(data$bmi, data$charges, data$age, pch = 16, col = "blue",
+          xlab = "X", ylab = "Y", zlab = "Z", main = "3D Scatter Plot")
 
 
-
+```
