@@ -3,6 +3,7 @@
 title: "Activity 3 - MLR"
 output: github_document
 ---
+- Find the knit document for my work on Rstudio below:
 [knit document](https://rstudio.gvsu.edu/s/1a9bab708b7b83241e6c5/file_show?path=%2Ftmp%2FRtmpVNPnXv%2Fpreview-11d3932893a3fd.html)
 
 ```{r setup, include=FALSE}
